@@ -1,0 +1,16 @@
+{% extends "layouts.html" %}
+
+{% block title %}
+Welcome
+{% endblock %}
+
+{% block js %}
+<script src="{{ url_for('static', filename='welcome.js') }}"></script>
+{% endblock %}
+
+{% block main %}
+<main class="container py-5">
+<h1 id="welcome">Welcome, {{username}}</h1>
+<a class="btn btn-outline-light" href="/chatrooms">Get started</a>
+</main>
+{% endblock %}

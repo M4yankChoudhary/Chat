@@ -1,0 +1,23 @@
+{% extends "layouts.html" %}
+
+{% block title %}
+Log in
+{% endblock %}
+
+{% block js %}
+<script src="{{ url_for('static', filename='login.js') }}"></script>
+{% endblock %}
+
+{% block main %}
+<main class="container py-5">
+<form action="login" id="form" method="POST">
+    <h1 id="channels">Login</h1>
+    <div class="form-group">
+        <i class="fa fa-user"></i>
+        <input name="username" id="username" autocomplete="off" autofocus class="form-control" name="username" placeholder="Enter your name" type="text">
+    </div>
+    <button id="submit" class="btn btn-primary" type="submit">Log In</button>
+</form>
+<hr>
+</main>
+{% endblock %}

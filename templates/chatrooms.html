@@ -1,0 +1,33 @@
+{% extends "layouts.html" %}
+
+{% block title %}
+chatrooms
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="{{ url_for('static', filename='chatrooms.js') }}"></script>
+{% endblock %}
+
+{% block main %}
+<main class="container py-5">
+    <h1 id="channels">#Channels</h1>
+    <h6 id="slogan">Create a channel or choose an existing channel</h6>
+    <ul id="rooms">
+    </ul>
+    <form action="chatrooms" method="POST">
+        <input name="name" id="room" autofocus autocomplete="off" type="text" placeholder="Enter a channel name">
+        <input id="submit" class="btn btn-primary" type="submit" value="Create">
+    </form>
+
+    <div class="row">
+    {% for room in rooms %}
+    <ul>
+        
+        <div class="col-sm-5">
+        <li><a id="channellist" class="roomid" data-name="{{room}}" href="chatroom/{{room}}">#{{room}}</a></li>
+        </div>
+</ul>
+    {% endfor %}
+    </div>
+    </main>
+{% endblock %}
